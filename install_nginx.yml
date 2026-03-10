@@ -1,0 +1,22 @@
+---
+- name: Install Nginx on Web Server
+  hosts: web
+  become: yes
+
+  tasks:
+
+    - name: Install Nginx
+      yum:
+        name: nginx
+        state: present
+
+    - name: Start Nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Copy website file
+      copy:
+        src: index.html
+        dest: /usr/share/nginx/html/index.html
