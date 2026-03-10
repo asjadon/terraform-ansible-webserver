@@ -4,9 +4,6 @@
 *.tfstate.*
 crash.log
 
-# Terraform variables (may contain secrets)
-*.tfvars
-
 # SSH keys
 *.pem
 *.key
